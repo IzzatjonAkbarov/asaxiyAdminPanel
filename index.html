@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login page</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
+  <body class="bg-gradient-to-r from-blue-500 to-purple-500">
+    <form id="form" class="inputs w-[50%] mx-auto" action="">
+      <p class="text-2xl font-medium pb-4">enter your email</p>
+      <input
+        class="w-[100%] p-2 rounded border border-[#006bff]"
+        id="email"
+        type="text"
+        required />
+      <p class="text-2xl font-medium pb-4">enter your password</p>
+      <span class="notfound"></span>
+      <div class="relative">
+        <input
+          class="w-[100%] p-2 rounded border border-[#006bff] outline-none"
+          id="password"
+          type="password"
+          required />
+        <i id="eye" class="fa-solid fa-eye absolute top-3 right-4"></i>
+      </div>
+      <button
+        class="my-2 w-[100%] items-center gap-2 text-center text-white text-[13px] bg-[#006bff] px-4 py-2 rounded-[10px] hover:text-[#006bff] border border-[#006bff] hover:bg-white transition-all active:scale-95"
+        type="submit">
+        Submit
+      </button>
+    </form>
+    <script src="./admin-login.js"></script>
+  </body>
+</html>
