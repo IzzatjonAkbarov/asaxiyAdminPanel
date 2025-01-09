@@ -71,6 +71,8 @@ function addUIdata(value) {
 
   cards.append(card);
 }
+let toast = document.querySelector(".toast");
+
 const deletebtn = document.querySelector(".deletebtn");
 
 cards.addEventListener("click", (e) => {
@@ -88,7 +90,13 @@ function deletefunc(id) {
     })
       .then((data) => data.json())
       .then((data) => getdatauseui(data)),
-      addsmth(data);
+      (toast.textContent = "deleted successfuly");
+    toast.classList.remove("right-[-200px]");
+    toast.style.transition = "1s";
+    toast.classList.add("right-[0px]");
+    setTimeout(() => {
+      window.location.href = "./admin.html";
+    }, 2000);
   }
 }
 const editbtn = document.querySelector(".editbtn");
