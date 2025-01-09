@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body>
@@ -33,7 +39,67 @@
         </div>
       </nav>
     </header>
+
     <div class="mt-5 cards grid grid-cols-4 items-center"></div>
+
+    <div
+      class="w-full h-full fixed top-0 bg-[#006aff9c] editarea flex items-center justify-center flex-col transition-all">
+      <form id="form" class="inputs w-[50%] mx-auto mt-7" action="">
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="text"
+          id="name"
+          placeholder="name" />
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="url"
+          id="img"
+          placeholder="img" />
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="number"
+          id="price"
+          placeholder="price" />
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="number"
+          id="old_price"
+          placeholder="old_price" />
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="number"
+          id="month"
+          placeholder="month" />
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="number"
+          id="month_payment"
+          placeholder="month_payment" />
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="number"
+          id="have"
+          placeholder="have" />
+        <input
+          required
+          class="w-[100%] p-2 rounded border border-[#006bff] my-1"
+          type="text"
+          id="type"
+          placeholder="type" />
+        <button
+          class="my-2 w-[100%] add items-center gap-2 text-center text-white text-[13px] bg-[#006bff] px-4 py-2 rounded-[10px] hover:text-[#006bff] border border-[#006bff] hover:bg-white transition-all active:scale-95"
+          type="submit">
+          add
+        </button>
+      </form>
+    </div>
     <script type="module" src="./admin.js"></script>
   </body>
 </html>
