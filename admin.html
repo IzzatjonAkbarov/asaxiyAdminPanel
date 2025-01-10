@@ -15,12 +15,12 @@
   <body>
     <header>
       <nav class="border-b">
-        <div class="container mx-auto flex justify-between items-center py-4">
+        <div class="container1 mx-auto flex justify-between items-center py-4">
           <a href="#" class="text-black text-2xl font-bold"
             ><img src="./logo.svg" alt=""
           /></a>
           <ul class="flex gap-4">
-            <li>
+            <li class="max-[500px]:hidden">
               <a
                 href="../6-dars-asaxiy/index.html"
                 class="text-black hover:text-gray-300"
@@ -40,8 +40,10 @@
       </nav>
     </header>
 
-    <div class="mt-5 cards grid grid-cols-4 items-center"></div>
-
+    <div class="container1 mx-auto">
+      <div
+        class="mt-5 w-[100%] cards grid grid-cols-4 items-center max-[1000px]:grid-cols-3 max-[771px]:grid-cols-2 max-[436px]:grid-cols-1"></div>
+    </div>
     <div
       class="w-full h-full fixed top-0 bg-[#006aff9c] editarea flex items-center justify-center flex-col transition-all">
       <form id="form" class="inputs w-[50%] mx-auto mt-7" action="">

@@ -9,6 +9,7 @@ const month = document.querySelector("#month");
 const month_payment = document.querySelector("#month_payment");
 const have = document.querySelector("#have");
 const type = document.querySelector("#type");
+let toast = document.querySelector(".toast");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -36,8 +37,16 @@ form.addEventListener("submit", (e) => {
       (month.value = ""),
       (month_payment.value = ""),
       (have.value = ""),
-      (type.value = "")
+      (type.value = ""),
+      (toast.textContent = "added successfuly"),
+      toast.classList.remove("right-[-200px]"),
+      (toast.style.transition = "1s"),
+      toast.classList.add("bg-green-400"),
+
+      toast.classList.add("right-[0px]"),
+      setTimeout(() => {
+        window.location.href = "./admin.html";
+      }, 2000)
     )
     .catch((err) => console.log(err));
-  //   window.location.href = "./admin.html";
 });

@@ -93,6 +93,8 @@ function deletefunc(id) {
       (toast.textContent = "deleted successfuly");
     toast.classList.remove("right-[-200px]");
     toast.style.transition = "1s";
+    toast.classList.add("bg-red-400");
+
     toast.classList.add("right-[0px]");
     setTimeout(() => {
       window.location.href = "./admin.html";
@@ -148,7 +150,14 @@ cards.addEventListener("click", (e) => {
         (month_payment.value = ""),
         (have.value = ""),
         (type.value = ""),
-        (editarea.style.display = "none")
+        (editarea.style.display = "none"),
+        (toast.textContent = "Edited successfuly"),
+        toast.classList.remove("right-[-200px]"),
+        (toast.style.transition = "1s"),
+        toast.classList.add("right-[0px]"),
+        setTimeout(() => {
+          window.location.href = "./admin.html";
+        }, 2000)
       )
       .catch((err) => console.log(err));
   });
