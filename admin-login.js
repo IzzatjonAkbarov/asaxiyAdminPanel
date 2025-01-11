@@ -7,14 +7,15 @@ form.addEventListener("submit", (e) => {
 
   if (emailvalue.value == "izzatillo" && passwordValue.value == "izzatillo") {
     let toast = document.querySelector(".toast");
-    toast.textContent = "loged in successfully";
+    toast.textContent = `Loged In Successfully ☑️`;
 
     toast.classList.remove("right-[-100%]");
 
-    toast.classList.remove("bg-[#006bff]");
+    toast.classList.remove("bg-white");
 
-    toast.style.transition = "1s";
-    toast.classList.add("right-[0px]");
+    toast.style.transition = "0.5s";
+    toast.classList.add("right-[20px]");
+    toast.classList.add("bg-blue");
     setTimeout(() => {
       window.location.href = "./admin.html";
     }, 2000);

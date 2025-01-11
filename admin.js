@@ -90,12 +90,16 @@ function deletefunc(id) {
     })
       .then((data) => data.json())
       .then((data) => getdatauseui(data)),
-      (toast.textContent = "deleted successfuly");
-    toast.classList.remove("right-[-100%]");
-    toast.style.transition = "1s";
-    toast.classList.add("bg-red-400");
+      (toast.textContent = "deleted successfuly 🗑️");
 
-    toast.classList.add("right-[0px]");
+    toast.classList.remove("right-[-100%]");
+
+    toast.classList.remove("bg-blue-600");
+
+    toast.style.transition = "0.5s";
+    toast.classList.add("bg-red-600");
+
+    toast.classList.add("right-[20px]");
     setTimeout(() => {
       window.location.href = "./admin.html";
     }, 2000);
@@ -155,10 +159,12 @@ cards.addEventListener("click", (e) => {
           (have.value = ""),
           (type.value = ""),
           (editarea.style.display = "none"),
-          (toast.textContent = "Edited successfuly"),
+          (toast.textContent = "Edited successfuly ✏️"),
+          toast.classList.remove("bg-blue-600"),
+          toast.classList.add("bg-green-500"),
           toast.classList.remove("right-[-100%]"),
-          (toast.style.transition = "1s"),
-          toast.classList.add("right-[0px]"),
+          (toast.style.transition = "0.5s"),
+          toast.classList.add("right-[20px]"),
           setTimeout(() => {
             window.location.href = "./admin.html";
           }, 2000)

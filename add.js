@@ -43,14 +43,17 @@ form.addEventListener("submit", (e) => {
         (month_payment.value = ""),
         (have.value = ""),
         (type.value = ""),
-        (toast.textContent = "added successfuly"),
-        toast.classList.remove("right-[-100%]"),
-        (toast.style.transition = "1s"),
+        (toast.textContent = `Added  ☑️`),
         toast.classList.add("bg-green-400"),
+        toast.classList.remove("right-[-100%]"),
 
-        toast.classList.add("right-[0px]"),
+        toast.classList.remove("bg-blue-600"),
+        toast.classList.add("bg-green-500"),
+
+        (toast.style.transition = "0.5s"),
+        toast.classList.add("right-[20px]"),
         setTimeout(() => {
-          window.location.href = "./admin.html";
+          // window.location.href = "./admin.html";
         }, 2000)
       )
       .catch((err) => console.log(err));
