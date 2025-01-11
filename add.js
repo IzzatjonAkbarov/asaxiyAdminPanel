@@ -53,7 +53,7 @@ form.addEventListener("submit", (e) => {
         (toast.style.transition = "0.5s"),
         toast.classList.add("right-[20px]"),
         setTimeout(() => {
-          // window.location.href = "./admin.html";
+          window.location.href = "./admin.html";
         }, 2000)
       )
       .catch((err) => console.log(err));
