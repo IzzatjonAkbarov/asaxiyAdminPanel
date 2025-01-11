@@ -7,9 +7,9 @@ form.addEventListener("submit", (e) => {
 
   if (emailvalue.value == "izzatillo" && passwordValue.value == "izzatillo") {
     let toast = document.querySelector(".toast");
-    toast.textContent = "loged in success";
+    toast.textContent = "loged in successfully";
 
-    toast.classList.remove("right-[-200px]");
+    toast.classList.remove("right-[-100%]");
 
     toast.classList.remove("bg-[#006bff]");
 

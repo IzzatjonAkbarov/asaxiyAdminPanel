@@ -13,40 +13,48 @@ let toast = document.querySelector(".toast");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetch(BASE_URL, {
-    method: "POST",
-    body: JSON.stringify({
-      name: name1.value,
-      img: "https://cdn.asaxiy.uz/asaxiy-content/product/items/desktop/b2f627fff19fda463cb386442eac2b3d2024011715304614439FSHb3tDZE3.png.webp",
-      old_price: +old_price.value,
-      price: +price.value,
-      month: +month.value,
-      month_payment: +month_payment.value,
-      have: +have.value,
-      type: type.value.toUpperCase(),
-    }),
-    headers: { "Content-Type": "application/json" },
-  })
-    .then((data) => data.json())
-    .then(
-      (data) => console.log(data),
-      (name1.value = ""),
-      (img.value = ""),
-      (old_price.value = ""),
-      (price.value = ""),
-      (month.value = ""),
-      (month_payment.value = ""),
-      (have.value = ""),
-      (type.value = ""),
-      (toast.textContent = "added successfuly"),
-      toast.classList.remove("right-[-200px]"),
-      (toast.style.transition = "1s"),
-      toast.classList.add("bg-green-400"),
+  let baseimg = "";
+  let imagefile = form.img.files[0];
+  let reader = new FileReader();
+  reader.onload = (e) => {
+    baseimg = e.target.result;
+    fetch(BASE_URL, {
+      method: "POST",
+      body: JSON.stringify({
+        name: name1.value,
+        img: baseimg,
+        old_price: +old_price.value,
+        price: +price.value,
+        month: +month.value,
+        month_payment: +month_payment.value,
+        have: +have.value,
+        type: type.value.toUpperCase(),
+      }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((data) => data.json())
+      .then(
+        (data) => console.log(data),
+        (name1.value = ""),
+        (img.value = ""),
+        (old_price.value = ""),
+        (price.value = ""),
+        (month.value = ""),
+        (month_payment.value = ""),
+        (have.value = ""),
+        (type.value = ""),
+        (toast.textContent = "added successfuly"),
+        toast.classList.remove("right-[-100%]"),
+        (toast.style.transition = "1s"),
+        toast.classList.add("bg-green-400"),
 
-      toast.classList.add("right-[0px]"),
-      setTimeout(() => {
-        window.location.href = "./admin.html";
-      }, 2000)
-    )
-    .catch((err) => console.log(err));
+        toast.classList.add("right-[0px]"),
+        setTimeout(() => {
+          window.location.href = "./admin.html";
+        }, 2000)
+      )
+      .catch((err) => console.log(err));
+  };
+
+  reader.readAsDataURL(imagefile);
 });
